@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 interface test {
     title : string, 
     subtitle : string , 
@@ -75,6 +75,7 @@ export function home() {
 
     return (
             <View style={{ flex: 1, justifyContent: 'center', backgroundColor : 'white' }}>
+                
                 <View style = {{flex : 3,}} >
                     <Image 
                         source={require('../../asset/logo.png')} 
@@ -82,8 +83,10 @@ export function home() {
                         style={{ height : 100, width : '100%', }}   
                     />
                 </View>
-                    
-                <View style={{flex :10}}> 
+                
+                
+                
+                <View style={{flex :10, marginTop : 20}}> 
                     <Carousel
                         autoplay={true}
                         style={{flex : 1}}
@@ -97,10 +100,19 @@ export function home() {
                         // onSnapToItem = { index => this.setState({activeIndex:index}) }
                     />
                 </View>
-                <View style={{flex :5 , backgroundColor :'blue', alignItems : 'center'}} > 
+
+                <View style={{flex :2, backgroundColor : 'blue'}} >
+                    <View>
+                        <Text>필터 </Text>
+                    </View>
+                </View>
+                
+                <View style={{flex :3 , backgroundColor :'white', alignItems : 'center', marginTop : 10}} > 
                     <View style={{ width : '80%' }}>
-                        <TouchableOpacity style={{ borderWidth : 2, flexDirection : 'row', borderColor : '#BDECB6'}}>
-                            <Text>Add Item</Text>
+                        <TouchableOpacity style={{ justifyContent : 'center' ,alignItems : 'center', borderWidth : 2, flexDirection : 'row', borderColor : '#BDECB6' , borderRadius : 15}}>
+                            <Icon name="add-outline" style={{ flex : 1, fontSize : 30, color: '#BDECB6'}}/>
+                            <Text style={{flex : 2, justifyContent : 'center' ,color : '#BDECB6' , fontSize : 30}}>Add Item</Text>
+
                         </TouchableOpacity>
                     </View>
 

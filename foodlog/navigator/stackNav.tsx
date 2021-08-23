@@ -7,7 +7,9 @@ const Stack = createStackNavigator();
 
 export default function StackNav() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      initialRouteName="Home"
+    >
       <Stack.Screen name="AddStore" component={addStore} 
         options={{
             headerShown : false
